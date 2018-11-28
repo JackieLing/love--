@@ -1,0 +1,224 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+
+#main {
+	width: 300px;
+	height: 500px;
+	border: 1px solid darkseagreen;
+	border-bottom: 0px;
+	margin: 0px auto;
+	min-width: 300px;
+}
+
+#top {
+	height: 50px;
+	background-color: darkseagreen;
+	line-height: 50px;
+	font-size: 18px;
+	text-align: center;
+	color: white;
+}
+
+#middle {
+	height: 280px;
+	overflow-y: auto;
+	/*border: 1px solid;*/
+	background-color: #ECF7F8;
+}
+
+#bottom {
+	background-color: #ECF7F8;
+	height: 96px;
+	border-top: 1px solid darkseagreen;
+}
+
+#bottom .bottom-top {
+	height: 30px;
+	/*border: 1px solid;*/
+	line-height: 30px;
+}
+
+#bottom .bottom-top .selt {
+	border: none;
+	float: right;
+	background-color: #ECF7F8;
+	height: 30px;
+}
+
+#bottom .bottom-top .selt:hover {
+	background-color: #D0DCDD;
+}
+
+#bottom .bottom-middle #text {
+	border: none;
+	outline: none;
+	background-color: #ECF7F8;
+}
+
+#footer {
+	width: 300px;
+	height: 30px;
+	margin: 0px auto;
+	background-color: #ECF7F8;
+	border: 1px solid darkseagreen;
+	border-top: 0px;
+}
+
+#footer input {
+	float: right;
+	margin-right: 10px;
+	width: 70px;
+	height: 30px;
+	border: none;
+	outline: none;
+	background-color: #A1DAE2;
+}
+
+#left {
+	min-height: 45px;
+	line-height: 30px;
+	padding-top: 5px;
+	width: 100%;
+	float: left;
+	color: #333333;
+}
+
+#left .face {
+	background-image: url(img/10.jpg);
+	background-size: 40px;
+	height: 40px;
+	width: 40px;
+	float: left
+}
+
+#left .tex {
+	min-height: 40px;
+	max-width: 300px;
+	line-height: 40px;
+	padding: 0px 5px;
+	border: 1px solid #666666;
+	margin-left: 2px;
+	float: left;
+	border-radius: 5px;
+	word-break: break-all;
+	/*英文单词不换行解决办法*/
+	word-wrap: break-word;
+	/*英文单词不换行解决办法*/
+}
+
+#rigt {
+	min-height: 45px;
+	line-height: 30px;
+	padding-top: 5px;
+	width: 100%;
+	float: right;
+	color: #333333;
+}
+
+#rigt .face {
+	background-image: url(img/1.jpg);
+	background-size: 40px;
+	height: 40px;
+	width: 40px;
+	float: right;
+}
+
+#rigt .tex {
+	float: right;
+	min-height: 40px;
+	max-width: 300px;
+	line-height: 40px;
+	border: 1px solid #666666;
+	margin-right: 2px;
+	padding: 0px 5px;
+	border-radius: 5px;
+	word-break: break-all;
+	/*英文单词不换行解决办法*/
+	word-wrap: break-word;
+	/*英文单词不换行解决办法*/
+}
+
+#txt {
+	width: 100%;
+	height: 50px;
+}
+
+.wu_div {
+	height: 300px;
+	width: 200px;
+	border: 1px solid;
+}
+
+#center {
+	width: 200px;
+	height: 250px;
+	background-color: white;
+	margin-left: 2px;
+	float: left;
+	position: relative;
+	border-radius: 5px;
+	word-break: break-all;
+	/*英文单词不换行解决办法*/
+	word-wrap: break-word;
+	/*英文单词不换行解决办法*/
+}
+
+#center_datu {
+	/*position: relative;*/
+	height: 125px;
+	width: 200px;
+}
+
+#center_datu img {
+	height: 125px;
+	width: 200px;
+}
+
+#center_datu_p {
+	position: absolute;
+	top: 85px;
+	width: 200px;
+	overflow: hidden;
+	text-align: center;
+	border: 1px solid #666;
+	line-height: 20px;
+	max-height: 40px;
+	background-color: #666666;
+	opacity: 0.8;
+	color: white;
+}
+
+#center_datu_p a {
+	text-decoration: none;
+	color: white;
+}
+
+#center .wu_top {
+	height: 62.5px;
+	border-top: 1px solid #666;
+}
+
+#center .wu_top {
+	text-indent: 2em;
+	width: 148px;
+	float: left;
+	line-height: 25px;
+	height: 60px;
+	overflow: hidden;
+	padding-top: 5px;
+}
+
+#center .wu_top a {
+	text-decoration: none;
+	color: black;
+}
+
+#img {
+	width: 50px;
+	height: 50px;
+	padding-top: 10px;
+	float: right;
+}

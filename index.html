@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+    function r()
+{
+var username=document.getElementById("username");
+var pass=document.getElementById("password");
+if(username.value=="")
+{
+alert("请输入用户名");
+username.focus();
+return ;
+}
+else if(pass.value=="")
+{
+alert("请输入密码");
+return;
+}
+else if((pass.value=="1314")&&(username.value=="520"))
+{
+frm.submit();
+window.location.href='inde.html';
+}
+else
+{
+alert("登录失败，亲爱的检查一下账号密码");
+return;
+}
+return true;
+}
+      	mui.init();
+    </script>
+    <style type="text/css">
+    body{
+    	background-image: url(image/u=1051599203,3123706187&fm=26&gp=0.jpg);
+    	background-position: center;
+    	background-size:132px;
+    	margin-top:200px;
+    	
+    	
+    }
+    </style> 
+</head>
+<body>
+	<header id="header" class="mui-bar mui-bar-nav">
+			
+			<h1 class="mui-title">情侣登录站</h1>
+		<a class="mui-icon mui-icon-bars mui-pull-right"></a><a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a></header>
+	<form name="frm" action="1.html" method="post">
+<table style="align-content: center;" align="center">
+<tr align=center>
+<td style="color: #000000;">我爱你:</td><td><input type="text" name="username" id="username" style="text-align: center;" style="background-color: brown;"></td>
+</tr>
+<tr align=center><td style="color: #000000;">一生一世:</td><td><input type="password" name="password" id="password"></td></tr>
+<tr align=center><td colspan="2"><input type="button" value="登 录" onclick="r();"/ style="background-color: #F0AD4E;">
+<input type="reset" value="重 置"/ style="background-color: #A1DAE2;"></td></tr>
+</table>
+</form>
+
+	<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="#tabbar">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-chat">
+				<span class="mui-icon mui-icon-email"><span class="mui-badge"></span></span>
+				<span class="mui-tab-label">情侣条款</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-contact">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">我的通讯录</span>
+			</a>
+		
+		</nav>
+		<div class="mui-content">
+			<div id="tabbar" class="mui-control-content mui-active">
+				<div class="title">这里是学习情侣登录站----------->我们做学习上的伴侣好不好？<br />
+				账号密码你能猜到的，相信你的情商，秀一秀！！
+				</div>
+				<img src="image/u=192875702,4022526032&fm=26&gp=0.jpg">
+			</div>
+			<div id="tabbar-with-chat" class="mui-control-content">
+				<div class="title">学习伴侣彩蛋：<br /></div>
+				
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell"><a href="111.html" class="mui-navigate-right">伴侣条款（约法三章）</a></li>
+					<li class="mui-table-view-cell"><a href="222.html" class="mui-navigate-right">令狐的优点233</a></li>
+					<li class="mui-table-view-cell"><a href="333.html" class="mui-navigate-right">令狐的缺点233</a></li>
+					<li class="mui-table-view-cell"><a href="444.html" class="mui-navigate-right">学习共处五项原则</a></li>
+					<li class="mui-table-view-cell"><a href="555.html" class="mui-navigate-right">胡的印象</a></li>
+					
+				
+			</div>
+			<div id="tabbar-with-contact" class="mui-control-content">
+				<div class="title">这是我的联系方式：</div>
+				<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="oa-contact-avatar mui-table-cell">
+								<img src="image/u=1120468413,1411062555&fm=26&gp=0.jpg">
+							</div>
+							<div class="oa-contact-content mui-table-cell">
+								<div class="mui-clearfix"><br />
+									<h4 class="oa-contact-name">令狐荣豪</h4>
+									<span class="oa-contact-position mui-h6">计算机科学与技术专业</span>
+								</div>
+								<p class="oa-contact-email mui-h6">
+									1714873054@qq.com
+								</p>
+							</div>
+						</div>
+					</div>
+				</li>
+				<a href="sms:18275601714">------>点击自动发送短信给对方</a><br />
+				<a href="tel:18275601714">------>点击自动拨号给对方</a>
+			
+			<div id="tabbar-with-map" class="mui-control-content">
+				<div class="title">这是div模式选项卡中的第4个子页面，该页面展示一个常见的设置示例.</div>
+				<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						新消息通知
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						隐私
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						通用
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 25px;">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						关于mui
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 25px;">
+				<li class="mui-table-view-cell">
+					<a style="text-align: center;color: #FF3B30;">
+						退出登录
+					</a>
+				</li>
+			</ul>
+			</div>
+		</div>
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#left {
+	min-height: 45px;
+	line-height: 30px;
+	padding-top: 5px;
+	width: 100%;
+	float: left;
+	color: #333333;
+}
+
+#left .face {
+	background-image: url(img/10.jpg);
+	background-size: 40px;
+	height: 40px;
+	width: 40px;
+	float: left
+}
+
+#left .tex {
+	min-height: 40px;
+	max-width: 300px;
+	line-height: 40px;
+	padding: 0px 5px;
+	border: 1px solid #666666;
+	margin-left: 2px;
+	float: left;
+	border-radius: 5px;
+	word-break: break-all;
+	/*英文单词不换行解决办法*/
+	word-wrap: break-word;
+	/*英文单词不换行解决办法*/
+}
+
+#rigt {
+	min-height: 45px;
+	line-height: 30px;
+	padding-top: 5px;
+	width: 100%;
+	float: right;
+	color: #333333;
+}
+
+#rigt .face {
+	background-image: url(img/1.jpg);
+	background-size: 40px;
+	height: 40px;
+	width: 40px;
+	float: right;
+}
+
+#rigt .tex {
+	float: right;
+	min-height: 40px;
+	max-width: 300px;
+	line-height: 40px;
+	border: 1px solid #666666;
+	margin-right: 2px;
+	padding: 0px 5px;
+	border-radius: 5px;
+	word-break: break-all;
+	/*英文单词不换行解决办法*/
+	word-wrap: break-word;
+	/*英文单词不换行解决办法*/
+}
+
+#txt {
+	width: 100%;
+	height: 50px;
+}
+
+.wu_div {
+	height: 300px;
+	width: 200px;
+	border: 1px solid;
+}
+
+#center {
+	width: 200px;
+	height: 250px;
+	background-color: white;
+	margin-left: 2px;
+	float: left;
+	position: relative;
+	border-radius: 5px;
+	word-break: break-all;
+	/*英文单词不换行解决办法*/
+	word-wrap: break-word;
+	/*英文单词不换行解决办法*/
+}
+
+#center_datu {
+	/*position: relative;*/
+	height: 125px;
+	width: 200px;
+}
+
+#center_datu img {
+	height: 125px;
+	width: 200px;
+}
+
+#center_datu_p {
+	position: absolute;
+	top: 85px;
+	width: 200px;
+	overflow: hidden;
+	text-align: center;
+	border: 1px solid #666;
+	line-height: 20px;
+	max-height: 40px;
+	background-color: #666666;
+	opacity: 0.8;
+	color: white;
+}
+
+#center_datu_p a {
+	text-decoration: none;
+	color: white;
+}
+
+#center .wu_top {
+	height: 62.5px;
+	border-top: 1px solid #666;
+}
+
+#center .wu_top {
+	text-indent: 2em;
+	width: 148px;
+	float: left;
+	line-height: 25px;
+	height: 60px;
+	overflow: hidden;
+	padding-top: 5px;
+}
+
+#center .wu_top a {
+	text-decoration: none;
+	color: black;
+}
+
+#img {
+	width: 50px;
+	height: 50px;
+	padding-top: 10px;
+	float: right;
+}
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/cs.css"/>
+		<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function send() {
+				var txt = document.getElementById("txt");
+				if(txt.value.trim() == "") { //把空格取消，里边没值得时候不能发送
+					return false;
+				}
+				mycreate();
+				txt.value = "";
+				middle.scrollTop = middle.scrollHeight;
+			}
+			//enter 提交
+			function tijiao(e) {
+				if(e.keyCode == 13 && e.ctrlKey) {
+					var txt = document.getElementById("txt");
+					txt.value += "\n"; //ctrl+enter是换行
+					return false;
+				} else if(e.keyCode == 13) {
+					send(); //提交
+					e.returnValue = false;
+					return false;
+				}
+			}
+
+			$(function() {
+				$("#but1").click(function() {
+					var div = $('<div id="rigt"><div class="face"></div></div>');
+					var tex = $("<div class='tex'>" + $('#txt').val() + "</div>");
+					div.append(tex);
+					$("#middle").append(div);
+					$.get("http://www.tuling123.com/openapi/api", {
+						key: "0db996e62ad2434094778b1ebeafc727",
+						info: $("#txt").val(),
+						userid: "123456"
+					}, function(date) {
+						//处理机器人返回的信息
+						//处理航班
+						var urltex = ""
+						if(date.url) {
+							urltex = "<a  href='" + date.url + "' target='_blank'+>" + "点击显示" + "</a>"
+						}
+						//处理新闻
+						if(date.list) {
+							var div1 = $('<div id="left"><div class="face"></div></div>');
+							var tex1 = $("<div id='center'></div>");
+							var div2 = $("<div id='center_datu'></div>");
+							var img = $("<img src='" + date.list[0].icon + "' />");
+							var p = $("<p id='center_datu_p'></p>");
+							var a = $("<a href='" + date.list[0].detailurl + "' target='_blank'+>" + date.list[0].article + "</a>");
+							var xidiv = $("<div></div>");
+							var p1 = $("<p class='wu_top'></p>");
+							var a1 = $("<a href='" + date.list[1].detailurl + "' target='_blank'+>" + date.list[1].article + "</a>");
+							var img1 = $("<img id='img' src='" + date.list[1].icon + "' />");
+							xidiv.append(img1);
+							xidiv.append(p1);
+							p1.append(a1);
+
+							var p2 = $("<p class='wu_top'></p>");
+							var a2 = $("<a href='" + date.list[2].detailurl + "' target='_blank'+>" + date.list[2].article + "</a>");
+							var img2 = $("<img id='img' src='" + date.list[2].icon + "' />");
+							xidiv.append(img2);
+							xidiv.append(p2);
+							p2.append(a2);
+
+							p.append(a);
+							div2.append(img);
+							div2.append(p);
+							tex1.append(div2);
+							div1.append(tex1);
+							tex1.append(xidiv)
+							$("#middle").append(div1);
+							$("#middle")[0].scrollTop = $("#middle")[0].scrollHeight;
+						} else {
+							var div1 = $('<div id="left"><div class="face"></div></div>');
+							var tex1 = $("<div class='tex'>" + date.text + urltex + "</div>");
+							div1.append(tex1);
+							$("#middle").append(div1);
+							$("#middle")[0].scrollTop = $("#middle")[0].scrollHeight;
+						}
+					})
+					$("#middle")[0].scrollTop = $("#middle")[0].scrollHeight;
+					$("#txt").val("");
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="main">
+			<div id="top">
+				令狐机器人//233//你敢问，我就敢答233
+			</div>
+			<div id="middle">
+				<div id="left">
+					<div class="face">
+
+					</div>
+					<div class="tex">
+						你好！听说你叫胡金鑫！我是机器人，主人把我的大脑连接到了互联网上
+						我可以陪你聊天，你也可以问我任何专业的资料哟！
+					</div>
+				</div>
+				<div id="rigt">
+					<div class="face">
+
+					</div>
+					<div class="tex">
+						请开始聊天！我是陪你唠嗑的！
+					</div>
+				</div>
+			</div>
+			<div id="bottom">
+				<div class="bottom-top">
+					<select class="selt">
+						<option value="">胡金鑫</option>
+					</select>
+				</div>
+				<div class="bottom-middle">
+					<textarea onkeydown="tijiao(event)" name="" id="txt"></textarea>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<input type="button" id="but1" value="发送" onclick="send()" />
+			<input type="button" id="but2" value="关闭" />
+			<a href="index.html">返回首页</a>
+		</div>
+		
+	</body>
+
+</html>
